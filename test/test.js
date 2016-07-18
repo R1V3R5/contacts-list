@@ -2,22 +2,35 @@
 import chai from 'chai';
 
 // Import Any Files to Test
-
+import { Contact } from '../src/js/models/contact';
+import { AddressBook } from '../src/js/models/address-book';
 // Set Chai Constants
 const expect = chai.expect;
 const should = chai.should();
 const assert = chai.assert;
 
-describe('Something We Want To Test', function () {
+describe('About our Contact', () => {
 
-  describe('Testing the Creation of Something', function () {
-
-    it('should exist after we create it', function () {
-      let x = new Object;
-      expect(x).to.be.an.instanceof(Object);
-    });
-
+  let contact;
+  beforeEach(() => {
+    contact = new Contact({
+      firstName: 'Joshua',
+      lastName: 'Rivers',
+      phoneNumber: '770-539-3646',
+      city: 'Atlanta',
+      state: 'GA'
+    });    
   });
 
+
+  describe('Creation of Contact', () => {
+    // it('contact should be an instance of Contact', () => {
+    //   let contact = new Contact();
+    //   expect(contact).to.be.an.instanceof(Contact);
+    // });
+    it('should have all the details when created', () => {
+      expect(contact.firstName).to.equal('Joshua');
+    })
+  });
 
 });
