@@ -8,7 +8,7 @@ class Contact {
     this.phoneNumber  = options.phoneNumber;
     this.city         = options.city;
     this.state        = options.state;
-    this.id           = _.random(100, 999); 
+    // this.id           = options.id; 
   }
 }
 
